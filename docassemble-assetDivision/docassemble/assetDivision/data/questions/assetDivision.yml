@@ -880,7 +880,7 @@ subquestion: |
 fields: 
   - To Whom Owed: student_loans[i].name.text
   - Date Incurred: student_loans[i].date
-  - Total Owed: student_loans[i].amount
+  - Total Owed: student_loans[i].debt
     datatype: currency
   
   - note: "**Upload copies of each applicable document below** (*If possible*)" 
@@ -913,7 +913,7 @@ subquestion: |
 fields: 
   - To Whom Owed: taxes[i].name.text
   - Date Incurred: taxes[i].date
-  - Total Owed: taxes[i].amount
+  - Total Owed: taxes[i].debt
     datatype: currency
   - Type of Property: taxes[i].type
     choices: 
@@ -943,7 +943,7 @@ subquestion: |
 fields: 
   - To Whom Owed: arrearages[i].name.text
   - Date Incurred: arrearages[i].date
-  - Total Owed: arrearages[i].amount
+  - Total Owed: arrearages[i].debt
     datatype: currency
   - Type of Property: arrearages[i].type
     choices: 
@@ -974,7 +974,7 @@ subquestion: |
 fields: 
   - To Whom Owed: unsecured_loans[i].name.text
   - Date Incurred: unsecured_loans[i].date
-  - Total Owed: unsecured_loans[i].amount
+  - Total Owed: unsecured_loans[i].debt
     datatype: currency
   - Type of Property: unsecured_loans[i].type
     choices: 
@@ -983,7 +983,7 @@ fields:
       - ${resp}'s Separate Property: unsecured_loans[i].separate_resp
   
   - note: "**Upload copies of each applicable document below** (*If possible*)" 
-	- Applicable loan documents: unsecured_loans[i].amount
+	- Applicable loan documents: unsecured_loans[i].applicable_documents
     datatype: files
     required: false
   - Latest statement: unsecured_loans[i].statement_current
@@ -1010,7 +1010,7 @@ subquestion: |
 fields: 
   - To Whom Owed: credit_cards[i].name.text
   - Date Incurred: credit_cards[i].date
-  - Total Owed: credit_cards[i].amount
+  - Total Owed: credit_cards[i].debt
     datatype: currency
   - Type of Property: credit_cards[i].type
     choices: 
@@ -1044,7 +1044,7 @@ subquestion: |
 fields: 
   - To Whom Owed: other_debts[i].name.text
   - Date Incurred: other_debts[i].date
-  - Total Owed: other_debts[i].amount
+  - Total Owed: other_debts[i].debt
     datatype: currency
   - Type of Property: other_debts[i].type
     choices: 
