@@ -281,22 +281,46 @@ fields:
   
   - Gross Fair Market Value: real_estate[i].value
     datatype: currency
+    hide if:
+      variable: real_estate[i].type
+      is: real_estate[i].mixed_asset
   - note: "*Remember, when you list an item's gross fair market value, you must list the current value of the items (*think, how much could I get for this at a garage sale or on Craigslist?*), NOT the value at which you purchased the item or the cost of replacing it.*"
   - Amount of Debt: real_estate[i].debt
     datatype: currency 
-  
+    hide if:
+      variable: real_estate[i].type
+      is: real_estate[i].mixed_asset
+      
   - ${pet}'s Separate Property, Gross Fair Market Value: real_estate[i].mixed_pet_separate_value
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: real_estate[i].type
+      is: real_estate[i].mixed_asset
   - ${pet}'s Separate Property, Amount of Debt: real_estate[i].mixed_pet_separate_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: real_estate[i].type
+      is: real_estate[i].mixed_asset
   - ${resp}'s Separate Property, Gross Fair Market Value: real_estate[i].mixed_resp_separate_value
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: real_estate[i].type
+      is: real_estate[i].mixed_asset
   - ${resp}'s Separate Property, Amount of Debt: real_estate[i].mixed_resp_separate_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: real_estate[i].type
+      is: real_estate[i].mixed_asset
   - Community Property, Gross Fair Market Value: real_estate[i].mixed_community_value
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: real_estate[i].type
+      is: real_estate[i].mixed_asset
   - Community Property, Amount of Debt: real_estate[i].mixed_community_debt
     datatype: currency 
+    show if:
+      variable: real_estate[i].type
+      is: real_estate[i].mixed_asset
   
   - note: "**Upload copies of each applicable document below** (*If possible*)" 
   - Deed: real_estate[i].deed
@@ -339,22 +363,46 @@ fields:
   
   - Gross Fair Market Value: furniture[i].value
     datatype: currency
+    hide if:
+      variable: furniture[i].type
+      is: furniture[i].mixed_asset
   - note: "*Remember, when you list an item's gross fair market value, you must list the current value of the items (*think, how much could I get for this at a garage sale or on Craigslist?*), NOT the value at which you purchased the item or the cost of replacing it.*"
   - Amount of Debt: furniture[i].debt
-    datatype: currency 
+    datatype: currency
+    hide if:
+      variable: furniture[i].type
+      is: furniture[i].mixed_asset
   
   - ${pet}'s Separate Property, Gross Fair Market Value: furniture[i].mixed_pet_separate_value
     datatype: currency 
+    show if:
+      variable: furniture[i].type
+      is: furniture[i].mixed_asset
   - ${pet}'s Separate Property, Amount of Debt: furniture[i].mixed_pet_separate_debt
     datatype: currency 
+    show if:
+      variable: furniture[i].type
+      is: furniture[i].mixed_asset
   - ${resp}'s Separate Property, Gross Fair Market Value: furniture[i].mixed_resp_separate_value
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: furniture[i].type
+      is: furniture[i].mixed_asset
   - ${resp}'s Separate Property, Amount of Debt: furniture[i].mixed_resp_separate_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: furniture[i].type
+      is: furniture[i].mixed_asset
   - Community Property, Gross Fair Market Value: furniture[i].mixed_community_value
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: furniture[i].type
+      is: furniture[i].mixed_asset
   - Community Property, Amount of Debt: furniture[i].mixed_community_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: furniture[i].type
+      is: furniture[i].mixed_asset
   
   - Do you and/or ${resp} own any other pieces or sets of household furniture, furnishings, or appliances?: furniture.there_is_another
     datatype: yesnoradio
@@ -389,22 +437,46 @@ fields:
   
   - Gross Fair Market Value: collectibles[i].value
     datatype: currency
+    hide if:
+      variable: collectibles[i].type
+      is: collectibles[i].mixed_asset
   - note: "*Remember, when you list an item's gross fair market value, you must list the current value of the items (*think, how much could I get for this at a garage sale or on Craigslist?*), NOT the value at which you purchased the item or the cost of replacing it.*"
   - Amount of Debt: collectibles[i].debt
     datatype: currency 
+    hide if:
+      variable: collectibles[i].type
+      is: collectibles[i].mixed_asset
   
   - ${pet}'s Separate Property, Gross Fair Market Value: collectibles[i].mixed_pet_separate_value
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: collectibles[i].type
+      is: collectibles[i].mixed_asset
   - ${pet}'s Separate Property, Amount of Debt: collectibles[i].mixed_pet_separate_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: collectibles[i].type
+      is: collectibles[i].mixed_asset
   - ${resp}'s Separate Property, Gross Fair Market Value: collectibles[i].mixed_resp_separate_value
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: collectibles[i].type
+      is: collectibles[i].mixed_asset
   - ${resp}'s Separate Property, Amount of Debt: collectibles[i].mixed_resp_separate_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: collectibles[i].type
+      is: collectibles[i].mixed_asset
   - Community Property, Gross Fair Market Value: collectibles[i].mixed_community_value
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: collectibles[i].type
+      is: collectibles[i].mixed_asset
   - Community Property, Amount of Debt: collectibles[i].mixed_community_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: collectibles[i].type
+      is: collectibles[i].mixed_asset
   
   - Do you and/or ${resp} own any other pieces or sets of jewelry, antiques, art, coin collections, or other collectibles?: collectibles.there_is_another
     datatype: yesnoradio
@@ -435,22 +507,46 @@ fields:
     
   - Gross Fair Market Value: vehicles[i].value
     datatype: currency
+    hide if:
+      variable: vehicles[i].type
+      is: vehicles[i].mixed_asset
   - note: "*Remember, when you list an item's gross fair market value, you must list the current value of the items (*think, how much could I get for this at a garage sale or on Craigslist?*), NOT the value at which you purchased the item or the cost of replacing it.*"
   - Amount of Debt: vehicles[i].debt
-    datatype: currency 
+    datatype: currency
+    hide if:
+      variable: vehicles[i].type
+      is: vehicles[i].mixed_asset
   
   - ${pet}'s Separate Property, Gross Fair Market Value: vehicles[i].mixed_pet_separate_value
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: vehicles[i].type
+      is: vehicles[i].mixed_asset
   - ${pet}'s Separate Property, Amount of Debt: vehicles[i].mixed_pet_separate_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: vehicles[i].type
+      is: vehicles[i].mixed_asset
   - ${resp}'s Separate Property, Gross Fair Market Value: vehicles[i].mixed_resp_separate_value
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: vehicles[i].type
+      is: vehicles[i].mixed_asset
   - ${resp}'s Separate Property, Amount of Debt: vehicles[i].mixed_resp_separate_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: vehicles[i].type
+      is: vehicles[i].mixed_asset
   - Community Property, Gross Fair Market Value: vehicles[i].mixed_community_value
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: vehicles[i].type
+      is: vehicles[i].mixed_asset
   - Community Property, Amount of Debt: vehicles[i].mixed_community_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: vehicles[i].type
+      is: vehicles[i].mixed_asset
   
   - note: "**Upload copies of each applicable document below** (*If possible*)" 
   - Title: vehicles[i].title
@@ -492,22 +588,46 @@ fields:
   
   - Gross Fair Market Value: savings_accounts[i].value
     datatype: currency
+    hide if:
+      variable: savings_accounts[i].type
+      is: savings_accounts[i].mixed_asset
   - note: "*Remember, when you list an item's gross fair market value, you must list the current value of the items (*think, how much could I get for this at a garage sale or on Craigslist?*), NOT the value at which you purchased the item or the cost of replacing it.*"
   - Amount of Debt: savings_accounts[i].debt
-    datatype: currency 
+    datatype: currency
+    hide if:
+      variable: savings_accounts[i].type
+      is: savings_accounts[i].mixed_asset
   
   - ${pet}'s Separate Property, Gross Fair Market Value: savings_accounts[i].mixed_pet_separate_value
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: savings_accounts[i].type
+      is: savings_accounts[i].mixed_asset
   - ${pet}'s Separate Property, Amount of Debt: savings_accounts[i].mixed_pet_separate_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: savings_accounts[i].type
+      is: savings_accounts[i].mixed_asset
   - ${resp}'s Separate Property, Gross Fair Market Value: savings_accounts[i].mixed_resp_separate_value
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: savings_accounts[i].type
+      is: savings_accounts[i].mixed_asset
   - ${resp}'s Separate Property, Amount of Debt: savings_accounts[i].mixed_resp_separate_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: savings_accounts[i].type
+      is: savings_accounts[i].mixed_asset
   - Community Property, Gross Fair Market Value: savings_accounts[i].mixed_community_value
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: savings_accounts[i].type
+      is: savings_accounts[i].mixed_asset
   - Community Property, Amount of Debt: savings_accounts[i].mixed_community_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: savings_accounts[i].type
+      is: savings_accounts[i].mixed_asset
   
   - note: "**Upload copies of each applicable document below** (*If possible*)" 
   - Latest statement: savings_accounts[i].statement_current
@@ -546,22 +666,46 @@ fields:
   
   - Gross Fair Market Value: checking_accounts[i].value
     datatype: currency
+    hide if:
+      variable: checking_accounts[i].type
+      is: checking_accounts[i].mixed_asset
   - note: "*Remember, when you list an item's gross fair market value, you must list the current value of the items (*think, how much could I get for this at a garage sale or on Craigslist?*), NOT the value at which you purchased the item or the cost of replacing it.*"
   - Amount of Debt: checking_accounts[i].debt
-    datatype: currency 
+    datatype: currency
+    hide if:
+      variable: checking_accounts[i].type
+      is: checking_accounts[i].mixed_asset
   
   - ${pet}'s Separate Property, Gross Fair Market Value: checking_accounts[i].mixed_pet_separate_value
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: checking_accounts[i].type
+      is: checking_accounts[i].mixed_asset
   - ${pet}'s Separate Property, Amount of Debt: checking_accounts[i].mixed_pet_separate_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: checking_accounts[i].type
+      is: checking_accounts[i].mixed_asset
   - ${resp}'s Separate Property, Gross Fair Market Value: checking_accounts[i].mixed_resp_separate_value
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: checking_accounts[i].type
+      is: checking_accounts[i].mixed_asset
   - ${resp}'s Separate Property, Amount of Debt: checking_accounts[i].mixed_resp_separate_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: checking_accounts[i].type
+      is: checking_accounts[i].mixed_asset
   - Community Property, Gross Fair Market Value: checking_accounts[i].mixed_community_value
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: checking_accounts[i].type
+      is: checking_accounts[i].mixed_asset
   - Community Property, Amount of Debt: checking_accounts[i].mixed_community_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: checking_accounts[i].type
+      is: checking_accounts[i].mixed_asset
   
   - note: "**Upload copies of each applicable document below** (*If possible*)" 
   - Latest statement: checking_accounts[i].statement_current
@@ -600,22 +744,46 @@ fields:
     
 	- Gross Fair Market Value: credit_union[i].value
     datatype: currency
+    hide if:
+      variable: credit_union[i].type
+      is: credit_union[i].mixed_asset
   - note: "*Remember, when you list an item's gross fair market value, you must list the current value of the items (*think, how much could I get for this at a garage sale or on Craigslist?*), NOT the value at which you purchased the item or the cost of replacing it.*"
   - Amount of Debt: credit_union[i].debt
-    datatype: currency 
+    datatype: currency
+    hide if:
+      variable: credit_union[i].type
+      is: credit_union[i].mixed_asset
   
   - ${pet}'s Separate Property, Gross Fair Market Value: credit_union[i].mixed_pet_separate_value
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: credit_union[i].type
+      is: credit_union[i].mixed_asset
   - ${pet}'s Separate Property, Amount of Debt: credit_union[i].mixed_pet_separate_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: credit_union[i].type
+      is: credit_union[i].mixed_asset
   - ${resp}'s Separate Property, Gross Fair Market Value: credit_union[i].mixed_resp_separate_value
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: credit_union[i].type
+      is: credit_union[i].mixed_asset
   - ${resp}'s Separate Property, Amount of Debt: credit_union[i].mixed_resp_separate_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: credit_union[i].type
+      is: credit_union[i].mixed_asset
   - Community Property, Gross Fair Market Value: credit_union[i].mixed_community_value
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: credit_union[i].type
+      is: credit_union[i].mixed_asset
   - Community Property, Amount of Debt: credit_union[i].mixed_community_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: credit_union[i].type
+      is: credit_union[i].mixed_asset
   
   - note: "**Upload copies of each applicable document below** (*If possible*)" 
 	- Latest statement: credit_union[i].statement_current
@@ -664,22 +832,46 @@ fields:
     
 	- Gross Fair Market Value: cash[i].value
     datatype: currency
+    hide if:
+      variable: cash[i].type
+      is: cash[i].mixed_asset
   - note: "*Remember, when you list an item's gross fair market value, you must list the current value of the items (*think, how much could I get for this at a garage sale or on Craigslist?*), NOT the value at which you purchased the item or the cost of replacing it.*"
   - Amount of Debt: cash[i].debt
-    datatype: currency 
+    datatype: currency
+    hide if:
+      variable: cash[i].type
+      is: cash[i].mixed_asset
   
   - ${pet}'s Separate Property, Gross Fair Market Value: cash[i].mixed_pet_separate_value
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: cash[i].type
+      is: cash[i].mixed_asset
   - ${pet}'s Separate Property, Amount of Debt: cash[i].mixed_pet_separate_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: cash[i].type
+      is: cash[i].mixed_asset
   - ${resp}'s Separate Property, Gross Fair Market Value: cash[i].mixed_resp_separate_value
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: cash[i].type
+      is: cash[i].mixed_asset
   - ${resp}'s Separate Property, Amount of Debt: cash[i].mixed_resp_separate_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: cash[i].type
+      is: cash[i].mixed_asset
   - Community Property, Gross Fair Market Value: cash[i].mixed_community_value
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: cash[i].type
+      is: cash[i].mixed_asset
   - Community Property, Amount of Debt: cash[i].mixed_community_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: cash[i].type
+      is: cash[i].mixed_asset
   
   - If applicable, upload copies of any documents demonstrating the amount and/or location of the cash: cash[i].statement_current
 	  datatype: file
@@ -743,22 +935,46 @@ fields:
   
   - Gross Fair Market Value: life_insurance[i].value
     datatype: currency
+    hide if:
+      variable: life_insurance[i].type
+      is: life_insurance[i].mixed_asset
   - note: "*Remember, when you list an item's gross fair market value, you must list the current value of the items (*think, how much could I get for this at a garage sale or on Craigslist?*), NOT the value at which you purchased the item or the cost of replacing it.*"
   - Amount of Debt: life_insurance[i].debt
-    datatype: currency 
+    datatype: currency
+    hide if:
+      variable: life_insurance[i].type
+      is: life_insurance[i].mixed_asset
   
   - ${pet}'s Separate Property, Gross Fair Market Value: life_insurance[i].mixed_pet_separate_value
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: life_insurance[i].type
+      is: life_insurance[i].mixed_asset
   - ${pet}'s Separate Property, Amount of Debt: life_insurance[i].mixed_pet_separate_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: life_insurance[i].type
+      is: life_insurance[i].mixed_asset
   - ${resp}'s Separate Property, Gross Fair Market Value: life_insurance[i].mixed_resp_separate_value
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: life_insurance[i].type
+      is: life_insurance[i].mixed_asset
   - ${resp}'s Separate Property, Amount of Debt: life_insurance[i].mixed_resp_separate_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: life_insurance[i].type
+      is: life_insurance[i].mixed_asset
   - Community Property, Gross Fair Market Value: life_insurance[i].mixed_community_value
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: life_insurance[i].type
+      is: life_insurance[i].mixed_asset
   - Community Property, Amount of Debt: life_insurance[i].mixed_community_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: life_insurance[i].type
+      is: life_insurance[i].mixed_asset
   
   - note: "**Upload copies of each applicable document below** (*If possible*)" 
 	- Policy declaration page: life_insurance[i].policy_declaration_page
@@ -795,22 +1011,46 @@ fields:
     
   - Gross Fair Market Value: brokerage_accounts[i].value
     datatype: currency
+    hide if:
+      variable: brokerage_accounts[i].type
+      is: brokerage_accounts[i].mixed_asset
   - note: "*Remember, when you list an item's gross fair market value, you must list the current value of the items (*think, how much could I get for this at a garage sale or on Craigslist?*), NOT the value at which you purchased the item or the cost of replacing it.*"
   - Amount of Debt: brokerage_accounts[i].debt
-    datatype: currency 
+    datatype: currency
+    hide if:
+      variable: brokerage_accounts[i].type
+      is: brokerage_accounts[i].mixed_asset
   
   - ${pet}'s Separate Property, Gross Fair Market Value: brokerage_accounts[i].mixed_pet_separate_value
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: brokerage_accounts[i].type
+      is: brokerage_accounts[i].mixed_asset
   - ${pet}'s Separate Property, Amount of Debt: brokerage_accounts[i].mixed_pet_separate_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: brokerage_accounts[i].type
+      is: brokerage_accounts[i].mixed_asset
   - ${resp}'s Separate Property, Gross Fair Market Value: brokerage_accounts[i].mixed_resp_separate_value
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: brokerage_accounts[i].type
+      is: brokerage_accounts[i].mixed_asset
   - ${resp}'s Separate Property, Amount of Debt: brokerage_accounts[i].mixed_resp_separate_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: brokerage_accounts[i].type
+      is: brokerage_accounts[i].mixed_asset
   - Community Property, Gross Fair Market Value: brokerage_accounts[i].mixed_community_value
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: brokerage_accounts[i].type
+      is: brokerage_accounts[i].mixed_asset
   - Community Property, Amount of Debt: brokerage_accounts[i].mixed_community_debt
     datatype: currency 
+    show if:
+      variable: brokerage_accounts[i].type
+      is: brokerage_accounts[i].mixed_asset
   
   - note: "**Upload copies of each applicable document below** (*If possible*)" 
 	- Latest statement: brokerage_accounts[i].statement_current
@@ -849,22 +1089,46 @@ fields:
   
   - Gross Fair Market Value: retirement_plans[i].value
     datatype: currency
+    hide if:
+      variable: retirement_plans[i].type
+      is: retirement_plans[i].mixed_asset
   - note: "*Remember, when you list an item's gross fair market value, you must list the current value of the items (*think, how much could I get for this at a garage sale or on Craigslist?*), NOT the value at which you purchased the item or the cost of replacing it.*"
   - Amount of Debt: retirement_plans[i].debt
-    datatype: currency 
+    datatype: currency
+    hide if:
+      variable: retirement_plans[i].type
+      is: retirement_plans[i].mixed_asset
   
   - ${pet}'s Separate Property, Gross Fair Market Value: retirement_plans[i].mixed_pet_separate_value
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: retirement_plans[i].type
+      is: retirement_plans[i].mixed_asset
   - ${pet}'s Separate Property, Amount of Debt: retirement_plans[i].mixed_pet_separate_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: retirement_plans[i].type
+      is: retirement_plans[i].mixed_asset
   - ${resp}'s Separate Property, Gross Fair Market Value: retirement_plans[i].mixed_resp_separate_value
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: retirement_plans[i].type
+      is: retirement_plans[i].mixed_asset
   - ${resp}'s Separate Property, Amount of Debt: retirement_plans[i].mixed_resp_separate_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: retirement_plans[i].type
+      is: retirement_plans[i].mixed_asset
   - Community Property, Gross Fair Market Value: retirement_plans[i].mixed_community_value
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: retirement_plans[i].type
+      is: retirement_plans[i].mixed_asset
   - Community Property, Amount of Debt: retirement_plans[i].mixed_community_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: retirement_plans[i].type
+      is: retirement_plans[i].mixed_asset
   
   - note: "**Upload copies of each applicable document below** (*If possible*)" 
 	- Summary plan documents: retirement_plans[i].summary_plan_documents
@@ -906,22 +1170,46 @@ fields:
   
   - Gross Fair Market Value: profit_sharing_plans[i].value
     datatype: currency
+    hide if:
+      variable: profit_sharing_plans[i].type
+      is: profit_sharing_plans[i].mixed_asset
   - note: "*Remember, when you list an item's gross fair market value, you must list the current value of the items (*think, how much could I get for this at a garage sale or on Craigslist?*), NOT the value at which you purchased the item or the cost of replacing it.*"
   - Amount of Debt: profit_sharing_plans[i].debt
-    datatype: currency 
+    datatype: currency
+    hide if:
+      variable: profit_sharing_plans[i].type
+      is: profit_sharing_plans[i].mixed_asset
   
   - ${pet}'s Separate Property, Gross Fair Market Value: profit_sharing_plans[i].mixed_pet_separate_value
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: profit_sharing_plans[i].type
+      is: profit_sharing_plans[i].mixed_asset
   - ${pet}'s Separate Property, Amount of Debt: profit_sharing_plans[i].mixed_pet_separate_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: profit_sharing_plans[i].type
+      is: profit_sharing_plans[i].mixed_asset
   - ${resp}'s Separate Property, Gross Fair Market Value: profit_sharing_plans[i].mixed_resp_separate_value
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: profit_sharing_plans[i].type
+      is: profit_sharing_plans[i].mixed_asset
   - ${resp}'s Separate Property, Amount of Debt: profit_sharing_plans[i].mixed_resp_separate_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: profit_sharing_plans[i].type
+      is: profit_sharing_plans[i].mixed_asset
   - Community Property, Gross Fair Market Value: profit_sharing_plans[i].mixed_community_value
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: profit_sharing_plans[i].type
+      is: profit_sharing_plans[i].mixed_asset
   - Community Property, Amount of Debt: profit_sharing_plans[i].mixed_community_debt
     datatype: currency 
+    show if:
+      variable: profit_sharing_plans[i].type
+      is: profit_sharing_plans[i].mixed_asset
   
   - note: "**Upload copies of each applicable document below** (*If possible*)" 
 	- Latest statement: profit_sharing_plans[i].statement_current
@@ -960,22 +1248,46 @@ fields:
   
   - Gross Fair Market Value: money_owed[i].value
     datatype: currency
+    hide if:
+      variable: money_owed[i].type
+      is: money_owed[i].mixed_asset
   - note: "*Remember, when you list an item's gross fair market value, you must list the current value of the items (*think, how much could I get for this at a garage sale or on Craigslist?*), NOT the value at which you purchased the item or the cost of replacing it.*"
   - Amount of Debt: money_owed[i].debt
-    datatype: currency 
+    datatype: currency
+    hide if:
+      variable: money_owed[i].type
+      is: money_owed[i].mixed_asset
   
   - ${pet}'s Separate Property, Gross Fair Market Value: money_owed[i].mixed_pet_separate_value
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: money_owed[i].type
+      is: money_owed[i].mixed_asset
   - ${pet}'s Separate Property, Amount of Debt: money_owed[i].mixed_pet_separate_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: money_owed[i].type
+      is: money_owed[i].mixed_asset
   - ${resp}'s Separate Property, Gross Fair Market Value: money_owed[i].mixed_resp_separate_value
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: money_owed[i].type
+      is: money_owed[i].mixed_asset
   - ${resp}'s Separate Property, Amount of Debt: money_owed[i].mixed_resp_separate_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: money_owed[i].type
+      is: money_owed[i].mixed_asset
   - Community Property, Gross Fair Market Value: money_owed[i].mixed_community_value
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: money_owed[i].type
+      is: money_owed[i].mixed_asset
   - Community Property, Amount of Debt: money_owed[i].mixed_community_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: money_owed[i].type
+      is: money_owed[i].mixed_asset
   
   - Upload any applicable documents (for example, apromissory note, IOU, letter/text/email, etc.) by the third party stating he or she owes you the money: money_owed[i].applicable_documents
     datatype: files
@@ -1008,22 +1320,46 @@ fields:
   
   - Gross Fair Market Value: businesses[i].value
     datatype: currency
+    hide if:
+      variable: businesses[i].type
+      is: businesses[i].mixed_asset
   - note: "*Remember, when you list an item's gross fair market value, you must list the current value of the items (*think, how much could I get for this at a garage sale or on Craigslist?*), NOT the value at which you purchased the item or the cost of replacing it.*"
   - Amount of Debt: businesses[i].debt
-    datatype: currency 
+    datatype: currency
+    hide if:
+      variable: businesses[i].type
+      is: businesses[i].mixed_asset
   
   - ${pet}'s Separate Property, Gross Fair Market Value: businesses[i].mixed_pet_separate_value
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: businesses[i].type
+      is: businesses[i].mixed_asset
   - ${pet}'s Separate Property, Amount of Debt: businesses[i].mixed_pet_separate_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: businesses[i].type
+      is: businesses[i].mixed_asset
   - ${resp}'s Separate Property, Gross Fair Market Value: businesses[i].mixed_resp_separate_value
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: businesses[i].type
+      is: businesses[i].mixed_asset
   - ${resp}'s Separate Property, Amount of Debt: businesses[i].mixed_resp_separate_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: businesses[i].type
+      is: businesses[i].mixed_asset
   - Community Property, Gross Fair Market Value: businesses[i].mixed_community_value
     datatype: currency 
+    show if:
+      variable: businesses[i].type
+      is: businesses[i].mixed_asset
   - Community Property, Amount of Debt: businesses[i].mixed_community_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: businesses[i].type
+      is: businesses[i].mixed_asset
   
   - note: "**Upload copies of each applicable document below** (*If possible*)" 
 	- Partnership/business agreement between you and your partners/other interest holders: businesses[i].partnership_documents
@@ -1066,22 +1402,46 @@ fields:
   
   - Gross Fair Market Value: other_assets[i].value
     datatype: currency
+    hide if:
+      variable: other_assets[i].type
+      is: other_assets[i].mixed_asset
   - note: "*Remember, when you list an item's gross fair market value, you must list the current value of the items (*think, how much could I get for this at a garage sale or on Craigslist?*), NOT the value at which you purchased the item or the cost of replacing it.*"
   - Amount of Debt: other_assets[i].debt
-    datatype: currency 
+    datatype: currency
+    hide if:
+      variable: other_assets[i].type
+      is: other_assets[i].mixed_asset
   
   - ${pet}'s Separate Property, Gross Fair Market Value: other_assets[i].mixed_pet_separate_value
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: other_assets[i].type
+      is: other_assets[i].mixed_asset
   - ${pet}'s Separate Property, Amount of Debt: other_assets[i].mixed_pet_separate_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: other_assets[i].type
+      is: other_assets[i].mixed_asset
   - ${resp}'s Separate Property, Gross Fair Market Value: other_assets[i].mixed_resp_separate_value
     datatype: currency 
+    show if:
+      variable: other_assets[i].type
+      is: other_assets[i].mixed_asset
   - ${resp}'s Separate Property, Amount of Debt: other_assets[i].mixed_resp_separate_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: other_assets[i].type
+      is: other_assets[i].mixed_asset
   - Community Property, Gross Fair Market Value: other_assets[i].mixed_community_value
     datatype: currency 
+    show if:
+      variable: other_assets[i].type
+      is: other_assets[i].mixed_asset
   - Community Property, Amount of Debt: other_assets[i].mixed_community_debt
     datatype: currency 
+    show if:
+      variable: other_assets[i].type
+      is: other_assets[i].mixed_asset
   
   - If possible, upload any applicable documents (for example, statements, valuations, etc.) demonstrating this asset's value and amount of debt: other_assets[i].applicable_documents
     datatype: files
@@ -1172,13 +1532,25 @@ fields:
   
   - Total Owed: taxes[i].debt
     datatype: currency
+    hide if:
+      variable: taxes[i].type
+      is: taxes[i].mixed_asset
   
   - ${pet}'s Separate Property, Amount of Debt: taxes[i].mixed_pet_separate_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: taxes[i].type
+      is: taxes[i].mixed_asset
   - ${resp}'s Separate Property, Amount of Debt: taxes[i].mixed_resp_separate_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: taxes[i].type
+      is: taxes[i].mixed_asset
   - Community Property, Amount of Debt: taxes[i].mixed_community_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: taxes[i].type
+      is: taxes[i].mixed_asset
   
   - If possible, upload any documents that provide information on any outstanding taxes, whether state, federal, or local: taxes[i].applicable_documents
     datatype: files
@@ -1240,13 +1612,25 @@ fields:
   
   - Total Owed: unsecured_loans[i].debt
     datatype: currency
+    hide if:
+      variable: unsecured_loans[i].type
+      is: unsecured_loans[i].mixed_asset
   
   - ${pet}'s Separate Property, Amount of Debt: unsecured_loans[i].mixed_pet_separate_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: unsecured_loans[i].type
+      is: unsecured_loans[i].mixed_asset
   - ${resp}'s Separate Property, Amount of Debt: unsecured_loans[i].mixed_resp_separate_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: unsecured_loans[i].type
+      is: unsecured_loans[i].mixed_asset
   - Community Property, Amount of Debt: unsecured_loans[i].mixed_community_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: unsecured_loans[i].type
+      is: unsecured_loans[i].mixed_asset
   
   - note: "**Upload copies of each applicable document below** (*If possible*)" 
 	- Applicable loan documents: unsecured_loans[i].applicable_documents
@@ -1285,13 +1669,25 @@ fields:
   
   - Total Owed: credit_cards[i].debt
     datatype: currency
+    hide if:
+      variable: credit_cards[i].type
+      is: credit_cards[i].mixed_asset
   
   - ${pet}'s Separate Property, Amount of Debt: credit_cards[i].mixed_pet_separate_debt
     datatype: currency 
+    show if:
+      variable: credit_cards[i].type
+      is: credit_cards[i].mixed_asset
   - ${resp}'s Separate Property, Amount of Debt: credit_cards[i].mixed_resp_separate_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: credit_cards[i].type
+      is: credit_cards[i].mixed_asset
   - Community Property, Amount of Debt: credit_cards[i].mixed_community_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: credit_cards[i].type
+      is: credit_cards[i].mixed_asset
   
   - note: "**Upload copies of each applicable document below** (*If possible*)" 
 	- Latest statement: credit_cards[i].statement_current
@@ -1328,13 +1724,25 @@ fields:
   
   - Total Owed: other_debts[i].debt
     datatype: currency
+    hide if:
+      variable: other_debts[i].type
+      is: other_debts[i].mixed_asset
   
   - ${pet}'s Separate Property, Amount of Debt: other_debts[i].mixed_pet_separate_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: other_debts[i].type
+      is: other_debts[i].mixed_asset
   - ${resp}'s Separate Property, Amount of Debt: other_debts[i].mixed_resp_separate_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: other_debts[i].type
+      is: other_debts[i].mixed_asset
   - Community Property, Amount of Debt: other_debts[i].mixed_community_debt
-    datatype: currency 
+    datatype: currency
+    show if:
+      variable: other_debts[i].type
+      is: other_debts[i].mixed_asset
   
   - If possible, upload any applicable documents (such as current and date of separation statements) demonstrating the amount and ownership of the debt: other_debts[i].applicable_documents
     datatype: files
